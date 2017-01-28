@@ -11,7 +11,8 @@
 * [Java runtime (JRE)](http://java.com/en/download/manual.jsp)
 * Firefox Web Browser / Chrome Web Browser
 * [Selenium standalone server](http://www.seleniumhq.org/download/)
-
+* php [xDebug](https://xdebug.org/) for CodeCoverage
+* NodeJS for PhantomJS browser
 
 ### Run on localhost
 * 1. Clone the repo / Download the master branch
@@ -27,7 +28,7 @@ composer install
 ```
 php -S localhost:8000 -t app
 ```
-* 4. In a new tab - Run selenium server 
+* 4. In a new tab - Start selenium server and keep it running
 ```
 java -jar selenium-server-standalone.jar
 ```
@@ -41,13 +42,25 @@ codecept run
 * But if you want to test it with *Google Chrome*, then follow next steps
 * Download the latest ```chromedriver_*.zip``` for your platform from [here](http://chromedriver.storage.googleapis.com/index.html)
 * Extract that zip to a folder and specify the path in next command
-* 4. In a new tab - Run selenium server 
+* 4. In a new tab - Start selenium server 
 ```
  java -jar selenium-server-standalone.jar -Dwebdriver.chrome.driver=/full/path/to/chromedriver
 ```
 * 5. In a new tab - Execute tests on chrome
 ```
 codecept run --env chrome
+```
+
+### PhantomJS
+* If you wants to speed up acceptance testing then consider moving to [PhantomJS](http://phantomjs.org/download.html) headless browser.
+* First install [node js](https://nodejs.org/en/download/) and then install PhantomJS
+* 4. In a new tab, Start PhantomJS, make sure port 4444 is free
+```
+phantomjs --webdriver=4444
+```
+* 5. In a new tab, Execute your test 
+```
+codecept run --env phantom
 ```
 
 ### Quick Links
