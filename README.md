@@ -34,7 +34,7 @@ java -jar selenium-server-standalone.jar
 ```
 * 5. In a new tab - Execute tests on Firefox (default)
 ```
-codecept run
+./vendor/bin/codecept run
 ```
 
 ### Google Chrome
@@ -48,7 +48,7 @@ codecept run
 ```
 * 5. In a new tab - Execute tests on chrome
 ```
-codecept run --env chrome
+./vendor/bin/codecept run --env chrome
 ```
 
 ### PhantomJS
@@ -60,7 +60,7 @@ phantomjs --webdriver=4444
 ```
 * 5. In a new tab, Execute your test 
 ```
-codecept run --env phantom
+./vendor/bin/codecept run --env phantom
 ```
 
 ### Quick Links
@@ -69,4 +69,4 @@ codecept run --env phantom
 * [GUI and Headless Browser Testing on Travis CI](https://docs.travis-ci.com/user/gui-and-headless-browsers/)
 
 ### License
-[MIT](LICENSE.txt)
+[MIT](LICENSE.txt) License
