@@ -6,8 +6,8 @@
 ### Prerequisites
 * Git client (optionally you can download this repo directly from github)
 * php v5.6+ with CURL extension
-* [Composer](https://getcomposer.org/download) (global install)
-* [Codeception](http://codeception.com/quickstart) (global install) 
+* [Composer](https://getcomposer.org/download) (global install) v1.3.x
+* [Codeception](http://codeception.com/quickstart)  v2.2.x
 * [Java runtime (JRE)](http://java.com/en/download/manual.jsp)
 * Firefox Web Browser / Chrome Web Browser
 * [Selenium standalone server](http://www.seleniumhq.org/download/)

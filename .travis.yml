@@ -35,10 +35,6 @@ before_install: phpenv config-rm xdebug.ini
 # Install packages those will be required during build
 install:
   - composer install --no-interaction
-  - echo "Download and Install codecept.phar"
-  - wget -c -nc --retry-connrefused --tries=0 http://codeception.com/codecept.phar
-  - chmod +x codecept.phar
-  - php codecept.phar --version
 
 # Prepare test environment
 before_script:
@@ -54,7 +50,7 @@ before_script:
 
 # Run main commands
 script:
-  - php codecept.phar run --no-interaction
+  - composer test
 
 #after_script:
 
