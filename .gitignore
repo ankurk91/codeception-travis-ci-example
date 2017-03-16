@@ -1,5 +1,4 @@
 # https://github.com/github/gitignore
-# https://www.gitignore.io/
 # http://git-scm.com/docs/gitignore
 
 # phpstorm, webstorm
@@ -53,7 +52,7 @@ bower_components/
 .svn/
 
 # composer
-vendor/
+/vendor/
 composer.phar
 
 # Security tokens
@@ -63,5 +62,4 @@ composer.phar
 
 # Project related
 /nohup.out
-tests/_output/*
 codecept.phar
