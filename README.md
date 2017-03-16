@@ -68,5 +68,8 @@ phantomjs --webdriver=4444
 * [Browser Testing on CodeShip](https://documentation.codeship.com/continuous-integration/browser-testing/)
 * [GUI and Headless Browser Testing on Travis CI](https://docs.travis-ci.com/user/gui-and-headless-browsers/)
 
+### TODOs
+* [Dynamic configs](http://codeception.com/docs/06-ModulesAndHelpers#dynamic-configuration-with-parameters) using [phpdotenv](https://barryvanveen.nl/blog/36-environment-configuration-in-codeception-with-dotenv)
+
 ### License
 [MIT](LICENSE.txt) License
