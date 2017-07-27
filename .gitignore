@@ -37,7 +37,7 @@ $RECYCLE.BIN/
 # Folder config file
 [Dd]esktop.ini
 *.DS_store
-.DS_store?
+.DS_store
 
 
 # node packages
@@ -62,4 +62,4 @@ composer.phar
 
 # Project related
 /nohup.out
-codecept.phar
+*.phar

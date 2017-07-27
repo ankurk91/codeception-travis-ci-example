@@ -8,22 +8,27 @@ class_name: AcceptanceTester
 modules:
     enabled:
         #- PhpBrowser:
-        #    url: http://www.myapp.dev:8000
+        #    url: http://localhost:8000
         - WebDriver
         - \Helper\Acceptance
     config:
             WebDriver:
                 url: 'http://localhost:8000'
-                browser: 'firefox'
+                browser: 'chrome'
                 wait: 1 #seconds
 
 # http://codeception.com/docs/07-AdvancedUsage
 env:
-    phantom:
+    chrome-headless:
          modules:
             config:
                 WebDriver:
-                    browser: 'phantomjs'
+                    browser: 'chrome'
+                    window_size: false
+                    capabilities:
+                      chromeOptions:
+                        args: ["--headless", "--disable-gpu", "window-size=1920x1080"]
+
 
     chrome:
          modules:
@@ -32,4 +37,19 @@ env:
                     browser: 'chrome'
 
     firefox:
-        # nothing changed
+        modules:
+            config:
+                WebDriver:
+                   browser: 'firefox'
+
+    safari:
+        modules:
+            config:
+                WebDriver:
+                   browser: 'safari'
+
+    phantom:
+         modules:
+            config:
+                WebDriver:
+                    browser: 'phantomjs'
