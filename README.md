@@ -1,53 +1,58 @@
-## Codeception Acceptance Testing on Travis-CI
+# Codeception Acceptance Testing on Travis-CI
 
 [![TravisCI Status](https://travis-ci.org/ankurk91/codeception-travis-ci-example.svg?branch=master)](https://travis-ci.org/ankurk91/codeception-travis-ci-example)
 
-### Prerequisites
+## Prerequisites
 * Git client (optionally you can download this repo directly from github)
 * php v5.6+ with CURL extension
 * [Composer](https://getcomposer.org/download) (global install) v1.4.2+
-* [Codeception](http://codeception.com/quickstart)  v2.3.x
+* [Codeception](http://codeception.com/quickstart)  v2.3.x (will be download by composer)
 * [Java runtime (JRE)](http://java.com/en/download/manual.jsp) v8+
-* Firefox Web Browser / Chrome Web Browser (latest)
+    - Ubuntu - [Tutorial](https://www.digitalocean.com/community/tutorials/how-to-manually-install-oracle-java-on-a-debian-or-ubuntu-vps)
+    - Mac OS - `brew cask install java`
+* Firefox / Chrome Web Browser (latest)
 * [Selenium standalone server](http://www.seleniumhq.org/download/) jar v3.4+
 * Web Driver for browsers
     - [gekodriver](https://github.com/mozilla/geckodriver/releases) for Mozilla Firefox
     - [chromedriver](http://chromedriver.storage.googleapis.com/index.html) for Google Chrome
 
-### Firefox
-* 1. Clone the repo / Download the master branch
+### Prepare
+* Clone the repo / Download the master branch
 ```
 git clone https://github.com/ankurk91/codeception-travis-ci-example.git
 cd codeception-travis-ci-example
 ```
-* 2. Install dependencies
+* Install dependencies
 ```
 composer install
 ```
-* 3. Run php inbuilt server, allow port 8000 in your firewall
+* Run php inbuilt server, allow port 8000 in your firewall
 ```
 php -S localhost:8000 -t app
 ```
-* 4. In a new tab - Start selenium server and keep it running
-```
-java -Dwebdriver.chrome.driver=/full/path/to/gekodriver -jar selenium-server-standalone-3.4.0.jar 
-```
-* 5. In a new tab - Execute tests on Firefox (default)
-```
-./vendor/bin/codecept run --env firefox
-```
 
-### Google Chrome
-* If you want to test it with *Google Chrome*, then replace next steps
-* Download the latest ```chromedriver_*.zip``` for your platform from 
-* Extract that zip to a folder and specify the path in next command
-* 4. In a new tab - Start selenium server 
+### Chrome
+* In a new tab - Start selenium server 
 ```
  java -Dwebdriver.chrome.driver=/full/path/to/chromedriver -jar selenium-server-standalone-3.4.0.jar 
 ```
-* 5. In a new tab - Execute tests on chrome
+* In a new tab - Execute tests on Chrome
 ```
 ./vendor/bin/codecept run --env chrome
+```
+* You can also try Chrome in headless mode
+```
+./vendor/bin/codecept run --env chrome-headless
+```
+
+### Firefox
+* In a new tab - Start selenium server and keep it running
+```
+java -Dwebdriver.chrome.driver=/full/path/to/gekodriver -jar selenium-server-standalone-3.4.0.jar 
+```
+* In a new tab - Execute tests on Firefox
+```
+./vendor/bin/codecept run --env firefox
 ```
 
 ### Quick Links
