@@ -5,15 +5,15 @@
 ## Prerequisites
 * Git client (optionally you can download this repo directly from github)
 * php v5.6+ with CURL extension
-* [Composer](https://getcomposer.org/download) (global install) v1.4.2+
-* [Codeception](http://codeception.com/quickstart)  v2.3.x (will be download by composer)
+* [Composer](https://getcomposer.org/download) (global install) v1.5.0+
+* [Codeception](http://codeception.com/quickstart)  v2.3.x (will be downloaded by composer)
 * [Java runtime (JRE)](http://java.com/en/download/manual.jsp) v8+
     - Ubuntu - [Tutorial](https://www.digitalocean.com/community/tutorials/how-to-manually-install-oracle-java-on-a-debian-or-ubuntu-vps)
     - Mac OS - `brew cask install java`
 * Firefox / Chrome Web Browser (latest)
-* [Selenium standalone server](http://www.seleniumhq.org/download/) jar v3.4+
+* [Selenium standalone server](http://www.seleniumhq.org/download/) jar file v3.4+
 * Web Driver for browsers
-    - [gekodriver](https://github.com/mozilla/geckodriver/releases) for Mozilla Firefox
+    - [geckodriver](https://github.com/mozilla/geckodriver/releases) for Mozilla Firefox
     - [chromedriver](http://chromedriver.storage.googleapis.com/index.html) for Google Chrome
 
 ### Prepare
@@ -32,11 +32,11 @@ php -S localhost:8000 -t app
 ```
 
 ### Chrome
-* In a new tab - Start selenium server 
+* In a new terminal tab - Start selenium server 
 ```
  java -Dwebdriver.chrome.driver=/full/path/to/chromedriver -jar selenium-server-standalone-3.4.0.jar 
 ```
-* In a new tab - Execute tests on Chrome
+* In a new terminal tab - Execute tests on Chrome
 ```
 ./vendor/bin/codecept run --env chrome
 ```
@@ -46,11 +46,11 @@ php -S localhost:8000 -t app
 ```
 
 ### Firefox
-* In a new tab - Start selenium server and keep it running
+* In a new terminal tab - Start selenium server and keep it running
 ```
-java -Dwebdriver.chrome.driver=/full/path/to/gekodriver -jar selenium-server-standalone-3.4.0.jar 
+java -Dwebdriver.gecko.driver=/full/path/to/geckodriver -jar selenium-server-standalone-3.4.0.jar 
 ```
-* In a new tab - Execute tests on Firefox
+* In a new terminal tab - Execute tests on Firefox
 ```
 ./vendor/bin/codecept run --env firefox
 ```
